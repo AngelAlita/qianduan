@@ -127,6 +127,8 @@
           console.log(str);
           if(contentflag && nameflag){
             $(".list-group").append(str);
+            $("#name").val("");
+            $("#content").val("");
           }else{
             alert("请补全留言哟！")
           }
