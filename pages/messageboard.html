@@ -43,14 +43,14 @@
             <form>
               <div class="form-group"> <input type="name" class="form-control" id="name" placeholder="名称"> </div>
               <div class="form-group"> <textarea class="form-control" id="content" rows="3" placeholder="留言内容"></textarea> </div> 
-              <button type="button" class="btn btn-primary" >发送</button>
+              <button type="button" class="btn btn-primary" id="submit" >发送</button>
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="py-3 footer">
+  <div class="py-3">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
@@ -62,6 +62,7 @@
   <script src="../js/jquery-3.6.0.min.js"></script>
   <script src="../js/bootstrap.bundle.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
+  
   <script>
     $(document).ready(function(){
       $.ajax({
@@ -83,7 +84,31 @@
             }
         })
     })
-    $("button").click(function(){
+    
+    var nameflag = false;
+    var contentflag = false;
+
+    var $name = $("#name");
+    var $content = $("#content");
+
+    $name.blur(function(){
+      if($name.length > 0 && $name.val() !=''){
+        nameflag = true;
+      }else{
+        nameflag = false;
+      }
+      console.log($name.val());
+    })
+
+    $content.blur(function(){
+      if($content.length > 0 && $content.val() !=''){
+        contentflag = true;
+      }else{
+        contentflag = false;
+      }
+      console.log($content.val());
+    })
+    $("#submit").click(function(){
           let myDate = new Date;
           let name = $("#name").val();
           let content = $("#content").val();
@@ -100,7 +125,12 @@
           let str6="</a>";
           let str=str1+str2+str3+str4+str5+str6;
           console.log(str);
-          $(".list-group").append(str);
+          if(contentflag && nameflag){
+            $(".list-group").append(str);
+          }else{
+            alert("请补全留言哟！")
+          }
+          
     });
   </script>
  
