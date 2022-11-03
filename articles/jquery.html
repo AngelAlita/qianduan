@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <title>jQuery</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar6">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar6"> <a class="navbar-brand text-primary d-none d-md-block" href="#">
+        <i class="bi bi-book"></i>
+          <b> Lee</b>
+        </a>
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"> <a class="nav-link" href="../pages/index.html">主页</a> </li>
+          <li class="nav-item"> <a class="nav-link active" href="../pages/article.html">文章</a> </li>
+          <li class="nav-item" > <a class="nav-link" href="../pages/photos.html" >相片</a> </li>
+          <li class="nav-item"><a class="nav-link" href="../pages/about.html">关于</a></li>
+          <li class="nav-item"><a class="nav-link" href="../pages/messageboard.html">留言板</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="category-ct" class="global-card card-side" style="width: 200px; float: left;">
+    <div class="card-side-title">
+        <b>文章目录</b>
+    </div>
+    <ul class="card-body">
+        <div id="category">
+            <div id="c-default" style="display:none;font-size:14px;text-align:center;color:#242424;line-height:20px;margin-top: 10px;padding-top: 5px;">
+                无文章目录
+            </div>
+        </div>
+    </ul>
+</div>
+  <div class="py-3" style="">
+    <div class="container">
+      <div class="row my-4 d-flex justify-content-center">
+        <div class="d-flex flex-column justify-content-center p-3 col-lg-12">
+          <div class="row">
+            <div class="px-lg-5 d-flex flex-column justify-content-center col-lg-12">
+              <h1 class="justify-content-center" style="text-align: center;">jQuery</h1>
+            </div>
+          </div>
+          <h2>简介</h2>
+          <p class="lead mb-0">jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（框架）于2006年1月由John Resig发布。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。 jQuery的核心特性可以总结为：具有独特的链式语法和短小清晰的多功能接口；具有高效灵活的CSS选择器，并且可对CSS选择器进行扩展；拥有便捷的插件扩展机制和丰富的插件。jQuery兼容各种主流浏览器，如IE 6.0+、FF 1.5+、Safari 2.0+、Opera 9.0+等。</p>
+        </div>
+      </div>
+      <div class="row my-4 d-flex justify-content-center" style="">
+        <div class="d-flex flex-column justify-content-center p-3 col-lg-12 order-1 order-lg-2">
+            <h2>产生背景</h2>
+            <p class="mb-0 lead" contenteditable="true">2006年1月John Resig等人创建了jQuery；8月，jQuery的第一个稳定版本，并且已经支持CSS选择符、事件处理和AJAX交互。 2007年7月，jQuery 1.1.3版发布，这次小版本的变化包含了对jQuery选择符引擎执行速度的显著提升。从这个版本开始，jQuery的性能达到了Prototype、Mootools以及Dojo等同类JavaScript库的水平。同年9月，jQuery 1.2版发布，它去掉了对XPath选择符的支持，原因是相对于CSS语法它已经变得多余了。这一版能够对效果进行更为灵活的定制，而且借助新增的命名空间事件，也使插件开发变得更容易。同时，jQuery UI项目也开始启动，这个新的套件是作为曾经流行但已过时的Interface插件的替代项目而发布的。jQuery UI中包含大量预定义好的部件（widget），以及一组用于构建高级元素（例如可拖放、拖拽、排序）的工具。 2008年5月，jQuery 1.2.6版发布，这版主要是将Brandon Aaron开发的流行的Dimensions插件的功能移植到了核心库中，同时也修改了许多BUG，而且有不少的性能得到提高。因此，如果以前的jQuery版本升级到1.2.6，那么完全可以从代码中排除Dimensions插件（一个获得元素尺寸、定位的插件）。 在jQuery迅速发展的同时，一些大的厂商也看中了商机。2009年9月，微软和诺基亚公司正式宣布支持开源的jQuery库，另外，微软公司还宣称他们将把jQuery作为Visual Studio工具集的一部分。他将提供包括jQuery的智能提示、代码片段、示例文档编制等内容在内的功能。微软和诺基亚公司将长期成为jQuery的用户成员，其他成员还有Google，Intel，IBM，Intuit等公司。 2009年1月，jQuery 1.3版发布，它使用了全新的选择符引擎Sizzle，在各个浏览器下全面超越其他同类型JavaScript框架的查询速度，程序库的性能也因此有了极大提升。这一版本的第2个变化就是提供live()方法，使用live()方法可以为当前及将来增加的元素绑定事件，在1.3版之前，如果要为将来增加的元素绑定事件，需要使用livequery插件，而在1.3版中，可以直接用live()方法。 2010年1月，也是jQuery的四周年生日，jQuery 1.4版发布，为了庆祝jQuery四周岁生日，jQuery团队特别创建了jquery14.com站点，带来了连续14天的新版本专题介绍。 在1.3及更早版本中，jQuery通过JavaScript的eval方法来解析json对象。在1.4中，如果你用的浏览器支持，则会使用原生的JSON.parse解析json对象，这样对json对象的书写验证则更为严格。比如：{foo: "bar"}的写法将不会被验证为合法的json对象，必须写成{"foo":"bar"}。如果你的程序打算升级到1.4版本，那么这一点要尤其注意。 2010年2月，jQuery 1.4.2版发布，它新增了有关事件委托的两个方法：delegate()和undelegate()。delegate()用于替代1.3.2中的live()方法。这个方法比live()来的方便，而且也可以达到动态添加事件的作用。</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-6 p-3"> <img class="img-fluid d-block" src="../images/jquery.png" > </div>
+                <div class="col-6 p-3"> <img class="img-fluid d-block" src="../images/jquerybk.png" > </div>
+              </div>
+            </div>
+          </div>
+          <h2>语言特点</h2>
+          <p class="lead mb-0">快速获取文档元素 jQuery的选择机制构建于Css的选择器，它提供了快速查询DOM文档中元素的能力，而且大大强化了JavaScript中获取页面元素的方式。 提供漂亮的页面动态效果 jQuery中内置了一系列的动画效果，可以开发出非常漂亮的网页，许多网站都使用jQuery的内置的效果，比如淡入淡出、元素移除等动态特效。 创建AJAX无刷新网页 AJAX是异步的JavaScript和XML的简称，可以开发出非常灵敏无刷新的网页，特别是开发服务器端网页时，比如PHP网站，需要往返地与服务器通信，如果不使用AJAX，每次数据更新不得不重新刷新网页，而使用AJAX特效后，可以对页面进行局部刷新，提供动态的效果。 提供对JavaScript语言的增强 jQuery提供了对基本JavaScript结构的增强，比如元素迭代和数组处理等操作。 增强的事件处理 jQuery提供了各种页面事件，它可以避免程序员在HTML中添加太多事件处理代码，最重要的是，它的事件处理器消除了各种浏览器兼容性问题。 更改网页内容 jQuery可以修改网页中的内容，比如更改网页的文本、插入或者翻转网页图像，jQuery简化了原本使用JavaScript代码需要处理的方式。</p>
+        </div>
+      </div>
+      <div class="row my-4 d-flex justify-content-center" style="">
+        <div class="d-flex flex-column justify-content-center p-3 col-lg-12 order-1 order-lg-2" style="">
+            <h2>学习指南</h2>
+          <p class="mb-0 lead" >jQuery JavaScript与CSS开发入门经典：本书浓墨重彩地描述jQuery的API及jQuery框架的所有基础知识，在实例引导下演示如何使用jQuery框架以超越纯JavaScript的速度实现更多功能，以及如何使用极少代码完成繁琐任务。本书还介绍jQuery UI库的用法，指导使用jQuery UI库创建赏心悦目的专业用户界面。</p>
+        </div>
+      </div>
+      <div class="row my-4 d-flex justify-content-center" style="">
+        <div class="d-flex flex-column justify-content-center p-3 col-lg-12 order-1 order-lg-2" style="">
+            <h2>语言评价</h2>
+          <p class="mb-0 lead">jQuery 是继prototype 之后又一个优秀的轻量级JavaScript 框架。其宗旨是———“Write Less, Do More”,写更少的代码,做更多的事情。 它是一个快速和简洁的JavaScript 库，可以简化HTML 文档元素的遍历，事件处理，动画和Ajax 交互以实现快速Web 开发，它被设计用来改变编写JavaScript 脚本的方式。 jQuery 的文档非常丰富，因为其轻量级的特性，文档并不复杂，随着新版本的发布，可以很快被翻译成多种语言，这也为jQuery 的流行提供了条件。jQuery 被包在语法上，jQuery 支持CSS1-3 的选择器， 兼容IE 6.0+, FF 2+,Safari 3.0+, Opera 9.0+, Chrome 等浏览器。同时，jQuery 有约几千种丰富多彩的插件，大量有趣的扩展和出色的社区支持，这弥补了jQuery功能较少的不足并为jQuery 提供了众多非常有用的功能扩展。加之其简单易学，jQuery 很快成为当今最为流行的JavaScript 库，成为开发网站等复杂度较低的Web 应用程序的首选JavaScript 库，并得到了大公司如微软，Google 的支持。 jQuery 最有特色的语法特点就是与CSS 语法相似的选择器，并且它支持CSS1 到CSS3 的几乎所有选择器，并兼容所有主流浏览器，这为快速访问DOM 提供了方便。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2022 LeeChance.&nbsp;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/articles/sidebar.js"></script>
+</body>
+
+</html>

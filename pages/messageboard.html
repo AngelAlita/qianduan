@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/mycss.css">
+  <title>留言板</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar6">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar6"> <a class="navbar-brand text-primary d-none d-md-block" href="#">
+        <i class="bi bi-book"></i>
+          <b> Lee</b>
+        </a>
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"> <a class="nav-link" href="../pages/index.html">主页</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="../pages/article.html">文章</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="../pages/photos.html">相片</a> </li>
+          <li class="nav-item"><a class="nav-link" href="../pages/about.html">关于</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">留言板</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" >
+          <div class="list-group">
+          </div>
+        </div>
+        <div class="col-md-6" >
+          <div class="mx-auto col-md-12" >
+            <h2 class="mb-4">谢谢你的留言</h2>
+            <form>
+              <div class="form-group"> <input type="name" class="form-control" id="name" placeholder="名称"> </div>
+              <div class="form-group"> <textarea class="form-control" id="content" rows="3" placeholder="留言内容"></textarea> </div> 
+              <button type="button" class="btn btn-primary" >发送</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3 footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2022 LeeChance.&nbsp;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $.ajax({
+            url:"../data/message.json",
+            type:"GET",
+            dataType:"json",
+            success:function(data){
+                $.each(data.message,function(i,item){
+                  let str1="<a href=\"#\" class=\"list-group-item flex-column align-items-start list-group-item-action\">";
+                  let str2="<div class=\"d-flex w-100 justify-content-between\">";
+                  let str3="<h5 class=\"mb-1\">"+item.name+"</h5> <small>"+item.time+"</small>"
+                  let str4="</div>";
+                  let str5=" <p class=\"mb-1\">"+item.content+"</p> <small></small>";
+                  let str6="</a>";
+                  let str=str1+str2+str3+str4+str5+str6;
+                  console.log(str);
+                  $(".list-group").append(str);
+                })
+            }
+        })
+    })
+    $("button").click(function(){
+          let myDate = new Date;
+          let name = $("#name").val();
+          let content = $("#content").val();
+          let year = myDate.getFullYear(); //获取当前年
+          let mon = myDate.getMonth() + 1; //获取当前月
+          let day = myDate.getDate(); //获取当前日
+          let time = year +'-'+mon+'-'+day;
+
+          let str1="<a href=\"#\" class=\"list-group-item flex-column align-items-start list-group-item-action\">";
+          let str2="<div class=\"d-flex w-100 justify-content-between\">";
+          let str3="<h5 class=\"mb-1\">"+name+"</h5> <small>"+time+"</small>"
+          let str4="</div>";
+          let str5=" <p class=\"mb-1\">"+content+"</p> <small></small>";
+          let str6="</a>";
+          let str=str1+str2+str3+str4+str5+str6;
+          console.log(str);
+          $(".list-group").append(str);
+    });
+  </script>
+ 
+</body>
+
+</html>
