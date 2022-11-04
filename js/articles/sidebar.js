@@ -11,13 +11,11 @@ $(function(){
             $('#category').append($('<a name=c'+index+' class="cbtn article-ch'+tagIndex+'" >'+headerText+'</a>'+"</br>"));
         else
             $('#category').append($('<a name=c'+index+' class="cbtn article-ch'+tagIndex+'" >> '+headerText+'</a>'+"</br>"));
-
     });
     if (notdefault == 0){
         $('#c-default').css('display','block');
     }
-
-
+    
     var navH = $("#category-ct").offset().top;
     //滚动条事件
     $(window).scroll(function(){

@@ -7,6 +7,13 @@
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <title>导航</title>
+  <style>
+		#container{
+			color: #fff;
+		}
+	</style>
+
+  </style>
 </head>
 
 <body >
@@ -15,8 +22,11 @@
       <div class="row mt-5">
         <div class="px-5 col-md-8 text-center mx-auto mt-3">
           <h3 class="text-primary display-4"> <b>Lee's Blog</b><br></h3>
-          <p class="mb-3" contenteditable="true">欢迎来到我博客，我是一名软件工程大三学生，在这里我将分享我的学习心得，学习笔记以及记录我的日常生活，希望你也能喜欢这里。
-          </p> <a href="pages/index.html" class="btn btn-primary">进入</a>
+          <p class="mb-3">
+            <div id="container">
+              欢迎来到我博客，我是一名软件工程大三学生，在这里我将分享我的学习心得，学习笔记以及记录我的日常生活，希望你也能喜欢这里。
+            </div>
+          </p> <a href="pages/index.html" class="btn btn-primary" style="display: none;">进入</a>
         </div>
       </div>
     </div>
@@ -28,5 +38,33 @@
   <script>
     $(".container").fadeIn(3000);
   </script>
+  <script type="text/javascript">
+		var text = $("#container").text().trim();
+		$("#container").html("");
+		for(var i = 0;i < text.length;i++){
+			$("#container").append("<span>"+text[i]+"</span>")
+		}
+		var s = 0;
+    var ok = false;
+		var tim = setInterval(function(){
+			$("#container span").eq(s++).css("color","black").show();
+			if(s == text.length){
+				clearInterval(tim)
+        ok = true;
+			}
+		}, 100)
+    
+    setInterval(function(){
+      if(ok == true){
+              $("a").fadeIn();
+      }
+
+    },100)
+
+		function getColor(){
+			return "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+")";
+		}
+	</script>
+
 </body>
 </html>
